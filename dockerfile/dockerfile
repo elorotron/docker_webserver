@@ -6,6 +6,7 @@ RUN apt-get update &&\
 COPY ./files/html /var/www/html
 COPY ./files/nginx/* /etc/nginx/sites-available
 COPY ./files/apache/* /etc/apache2
+COPY ./files/certs/* /etc/ssl/certs
 RUN ln -s /etc/nginx/sites-available/reverse-proxy /etc/nginx/sites-enabled/ &&\
     ln -s /etc/nginx/sites-available/susel.ddns.net /etc/nginx/sites-enabled/ &&\
     ln -s /etc/nginx/sites-available/susel.ddns.net2 /etc/nginx/sites-enabled/

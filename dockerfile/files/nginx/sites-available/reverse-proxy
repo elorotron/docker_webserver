@@ -63,11 +63,11 @@ server {
 
 #==============SSL and redirect=========================================================================
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/susel.ddns.net/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/susel.ddns.net/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl;
+    ssl_certificate /etc/ssl/certs/domain.crt;
+    ssl_certificate_key /etc/ssl/certs/domain.key;
+    # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
 
@@ -77,12 +77,12 @@ server {
 server {
     if ($host = susel.ddns.net) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    }
 
 
     listen 80;
     server_name susel.ddns.net;
-    return 404; # managed by Certbot
+    return 404;
 
 
 }
