@@ -3,10 +3,9 @@ FROM ubuntu:22.04
 ENV TZ="Europe/Minsk"
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
-RUN apt-get install -y nginx-extras apache2 php libapache2-mod-php systemctl
-RUN apt-get clean
-#RUN date
+RUN apt-get update &&\
+    apt-get install -y nginx-extras apache2 php libapache2-mod-php systemctl &&\
+    apt-get clean
 
 VOLUME /volume
 
