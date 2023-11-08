@@ -6,4 +6,4 @@ COPY ./files/ports.conf /etc/apache2/ports.conf
 
 RUN service apache2 restart
 
-EXPOSE 8081
+EXPOSE 8080
