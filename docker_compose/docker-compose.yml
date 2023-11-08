@@ -16,7 +16,7 @@ services:
     build: ./apache
     restart: always
     ports:
-      - 8081:8081
+      - 8080:80
     networks:
       - SuselNetwork
 
