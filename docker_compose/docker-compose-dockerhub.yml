@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nginx:
-    build: suselstar/nginx_susel:latest
+    imagee: suselstar/nginx_susel:latest
     restart: always
     ports:
       - 80:80
@@ -13,7 +13,7 @@ services:
       - SuselNetwork
 
   apache:
-    build: suselstar/apache_susel:latest
+    image: suselstar/apache_susel:latest
     restart: always
     ports:
       - 8080:8080
