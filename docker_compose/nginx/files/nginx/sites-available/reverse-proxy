@@ -4,7 +4,7 @@ log_format upstreamlog '$server_name to: $upstream_addr [$request] '
 
 
 upstream notes {
- server localhost:8080;
+ server localhost:8081;
  server localhost:8085;
 }
 
@@ -31,7 +31,7 @@ server {
 
 
     location /info.php {
-         proxy_pass http://apache:8080/;
+         proxy_pass http://apache:8090/;
 
     }
 
