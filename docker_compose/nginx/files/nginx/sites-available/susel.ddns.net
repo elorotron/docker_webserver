@@ -3,8 +3,8 @@ server {
 #================================
     server_name localhost;
     
-    listen [::]:8080;
-    listen 8080;
+    listen [::]:8081;
+    listen 8081;
     
     root /var/www/html;
     index index.html index.php info.php;
