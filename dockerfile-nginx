@@ -1,0 +1,11 @@
+FROM nginx:1.25-alpine
+
+RUN mkdir -p /var/www/html
+#COPY ./files/html /var/www/html
+#COPY ./files/nginx/default.conf /etc/nginx/conf.d/default.conf
+#COPY ./files/nginx/nginx.conf /etc/nginx/nginx.conf
+#COPY ./files/certs/* /etc/ssl/certs/
+#VOLUME [ "/etc/ssl/certs" ]
+
+EXPOSE 80
+EXPOSE 443

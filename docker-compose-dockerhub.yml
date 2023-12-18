@@ -7,10 +7,14 @@ services:
     ports:
       - 80:80
       - 443:443
-    volumes:
-      - /output_logs:/volume
     networks:
       - SuselNetwork
+    volumes:
+      - ./files/certs:/etc/ssl/certs
+      - ./files/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./files/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./files/html:/var/www/html
+
 
   apache:
     image: suselstar/apache_susel:latest
@@ -22,3 +26,4 @@ services:
 
 networks:
   SuselNetwork:
+

@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: dockerfile-nginx
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - SuselNetwork
+    volumes:
+      - ./files/certs:/etc/ssl/certs
+      - ./files/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./files/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./files/html:/var/www/html
+
+
+  apache:
+    build:
+      context: .
+      dockerfile: dockerfile-apache
+    restart: always
+    ports:
+      - 8090:8090
+    networks:
+      - SuselNetwork
+
+networks:
+  SuselNetwork:
